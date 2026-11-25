@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05070f">
+<title>YAMA AI TOKEN PLATFORM · VIP PRO</title>
+<style>
+:root{--bg:#05070f;--card:rgba(17,24,48,.72);--line:rgba(0,229,255,.22);--neon:#00e5ff;--vio:#8b5cf6;--pink:#ff2bd6;--text:#e8ecff;--mut:#8a93b8;--ok:#22ff88}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,system-ui,"Segoe UI",sans-serif;line-height:1.5;min-height:100vh;overflow-x:hidden}
+#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.05) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(circle at 50% 20%,#000,transparent 75%);-webkit-mask-image:radial-gradient(circle at 50% 20%,#000,transparent 75%)}
+a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:rgba(5,7,15,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:2px}
+.brand small{display:block;font-size:9px;color:var(--neon);letter-spacing:3px}
+.logo{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;color:#000;font-weight:900;background:linear-gradient(135deg,var(--neon),var(--vio));box-shadow:0 0 18px rgba(0,229,255,.6)}
+.menu-button{background:none;border:1px solid var(--line);color:var(--text);font-size:20px;border-radius:9px;padding:3px 11px}
+nav{display:none;width:100%;flex-direction:column;gap:6px;padding-top:6px}
+nav.open{display:flex}
+nav a{padding:10px 12px;border-radius:9px;background:rgba(255,255,255,.04)}
+.status{font-size:10px;letter-spacing:1.5px;color:var(--neon)}
+.status i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:5px;box-shadow:0 0 10px var(--ok);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.3}}
+.container{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 16px}
+.hero{display:grid;gap:26px;padding:36px 0 20px;text-align:center}
+.eyebrow{font-size:11px;letter-spacing:3px;color:var(--neon)}
+h1{font-size:clamp(40px,12vw,64px);line-height:1.05;margin:10px 0;font-weight:900}
+h1 span{background:linear-gradient(90deg,var(--neon),var(--vio),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.copy{color:var(--mut)}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:800;color:#000;background:linear-gradient(90deg,var(--neon),var(--vio));padding:14px 22px;border-radius:13px;margin-top:16px;box-shadow:0 0 22px rgba(0,229,255,.4);transition:.15s}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:none;color:var(--text);border:1px solid var(--line);box-shadow:none}
+.orb{display:grid;place-items:center;position:relative;height:200px}
+.orb-core{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;font-size:62px;font-weight:900;background:radial-gradient(circle at 30% 30%,var(--neon),var(--vio) 55%,#12083a);box-shadow:0 0 70px var(--vio),inset 0 0 30px rgba(255,255,255,.25);animation:float 4s ease-in-out infinite}
+.ring{position:absolute;width:200px;height:200px;border-radius:50%;border:1px dashed var(--neon);opacity:.5;animation:spin 14s linear infinite}
+.ring.r2{width:170px;height:170px;border-color:var(--pink);animation-direction:reverse;animation-duration:9s}
+@keyframes float{50%{transform:translateY(-12px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.stat b{display:block;font-size:20px;color:var(--neon)}
+.stat span{font-size:10px;color:var(--mut);letter-spacing:1px}
+.section{margin:38px 0}
+.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}
+h2{font-size:22px;letter-spacing:1px}
+.tag{font-size:10px;border:1px solid var(--vio);color:var(--vio);padding:3px 9px;border-radius:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.wallet{display:flex;justify-content:space-between;align-items:center;gap:10px;box-shadow:0 0 40px rgba(139,92,246,.18)}
+.bal{font-size:40px;font-weight:900;color:var(--neon);text-shadow:0 0 18px rgba(0,229,255,.6)}
+.bal small{font-size:12px;color:var(--mut);text-shadow:none}
+.sym{font-size:54px;color:var(--vio);text-shadow:0 0 20px var(--vio)}
+.muted{color:var(--mut);font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.svc{transition:.2s}
+.svc:active{transform:scale(.98)}
+.svc .ic{font-size:28px;color:var(--neon);text-shadow:0 0 14px var(--neon)}
+.svc h3{margin:8px 0 4px;font-size:15px}
+.svc p{font-size:12px;color:var(--mut);min-height:36px}
+.svc .btn{width:100%;font-size:11px;padding:11px;margin-top:12px}
+.pack{position:relative;text-align:center}
+.pack.hot{border-color:var(--pink);box-shadow:0 0 32px rgba(255,43,214,.3)}
+.pack .badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--pink);color:#000;font-size:10px;font-weight:900;padding:2px 10px;border-radius:20px}
+.pack .amt{font-size:34px;font-weight:900;margin:8px 0 2px}
+.pack .amt small{font-size:12px;color:var(--mut)}
+.pack .price{color:var(--neon);font-weight:700}
+.packs{display:grid;gap:14px}
+.log{list-style:none;display:grid;gap:8px}
+.log li{display:flex;justify-content:space-between;font-size:13px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.04)}
+.plus{color:var(--ok);font-weight:700}.minus{color:var(--pink);font-weight:700}
+.out{margin-top:12px;font-size:13px;color:var(--neon);min-height:20px;font-family:ui-monospace,monospace}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:34px 0 calc(34px + env(safe-area-inset-bottom))}
+.notice{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));z-index:50;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#0b1030;border:1px solid var(--neon);padding:12px 18px;border-radius:13px;box-shadow:0 0 24px rgba(0,229,255,.4);transition:.3s;font-size:14px;max-width:90vw;text-align:center}
+.notice.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:760px){.menu-button{display:none}nav,nav.open{display:flex;flex-direction:row;width:auto;padding:0}nav a{background:none}.hero{grid-template-columns:1.1fr .9fr;text-align:left;padding-top:70px}.grid{grid-template-columns:repeat(4,1fr)}.packs{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+
+<header class="topbar">
+  <a class="brand" href="#top"><span class="logo">Y</span><span>YAMA <small>AI PLATFORM · VIP PRO</small></span></a>
+  <button class="menu-button" id="menuBtn" aria-label="Menu">☰</button>
+  <nav id="nav">
+    <a href="#dashboard">Dashboard</a>
+    <a href="#services">AI Services</a>
+    <a href="#shop">Token Shop</a>
+    <a href="#history">Lịch sử</a>
+  </nav>
+  <span class="status"><i></i>SYSTEM ONLINE</span>
+</header>
+
+<main class="container" id="top">
+  <section class="hero" id="dashboard">
+    <div>
+      <p class="eyebrow">MULTI-INTELLIGENCE ECOSYSTEM</p>
+      <h1>WELCOME TO<br><span>YAMA AI</span></h1>
+      <p class="copy">Một nền tảng. Nhiều động cơ AI. Một hệ thống credit thống nhất.</p>
+      <a class="btn" href="#services">KHÁM PHÁ DỊCH VỤ AI ↗</a>
+      <a class="btn ghost" href="#shop" style="margin-left:6px">NẠP TOKEN</a>
+      <div class="stats">
+        <div class="stat"><b id="sUsed">0</b><span>ĐÃ DÙNG</span></div>
+        <div class="stat"><b id="sCalls">0</b><span>LƯỢT GỌI</span></div>
+        <div class="stat"><b>4</b><span>AI ENGINE</span></div>
+      </div>
+    </div>
+    <div class="orb"><div class="ring"></div><div class="ring r2"></div><div class="orb-core">Y</div></div>
+  </section>
+
+  <section class="section">
+    <div class="head"><div><p class="eyebrow">TÀI KHOẢN CỦA BẠN</p><h2>VÍ AI TOKEN</h2></div><span class="tag">DEMO MODE</span></div>
+    <div class="card wallet">
+      <div>
+        <p class="muted">SỐ DƯ KHẢ DỤNG</p>
+        <div class="bal"><span id="bal">0</span> <small>YAMA CREDITS</small></div>
+        <p class="muted">Số dư demo · Không phải tiền thật</p>
+      </div>
+      <div class="sym">◈</div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="head"><div><p class="eyebrow">MẠNG LƯỚI TRÍ TUỆ</p><h2>DỊCH VỤ AI</h2></div></div>
+    <div class="grid">
+      <article class="card svc"><span class="ic">✦</span><h3>AI CHAT</h3><p>Hỏi đáp và tạo ý tưởng.</p><button class="btn use" data-cost="10" data-name="AI Chat">DÙNG THỬ · 10</button></article>
+      <article class="card svc"><span class="ic">▧</span><h3>AI IMAGE</h3><p>Tạo hình ảnh từ mô tả.</p><button class="btn use" data-cost="30" data-name="AI Image">DÙNG THỬ · 30</button></article>
+      <article class="card svc"><span class="ic">⌘</span><h3>AI CODING</h3><p>Viết và kiểm tra code.</p><button class="btn use" data-cost="20" data-name="AI Coding">DÙNG THỬ · 20</button></article>
+      <article class="card svc"><span class="ic">▶</span><h3>AI VIDEO</h3><p>Khám phá tạo video AI.</p><button class="btn use" data-cost="50" data-name="AI Video">DÙNG THỬ · 50</button></article>
+    </div>
+    <div class="out" id="out"></div>
+  </section>
+
+  <section class="section" id="shop">
+    <div class="head"><div><p class="eyebrow">GÓI CREDIT</p><h2>TOKEN SHOP</h2></div></div>
+    <div class="packs">
+      <div class="card pack"><h3>STARTER</h3><div class="amt">500 <small>CREDITS</small></div><p class="price">Miễn phí (demo)</p><button class="btn buy" data-amt="500" data-name="Starter">NHẬN GÓI</button></div>
+      <div class="card pack hot"><span class="badge">PHỔ BIẾN</span><h3>PRO</h3><div class="amt">2,000 <small>CREDITS</small></div><p class="price">Miễn phí (demo)</p><button class="btn buy" data-amt="2000" data-name="Pro">NHẬN GÓI</button></div>
+      <div class="card pack"><h3>ELITE</h3><div class="amt">10,000 <small>CREDITS</small></div><p class="price">Miễn phí (demo)</p><button class="btn buy" data-amt="10000" data-name="Elite">NHẬN GÓI</button></div>
+    </div>
+  </section>
+
+  <section class="section" id="history">
+    <div class="head"><div><p class="eyebrow">GIAO DỊCH</p><h2>LỊCH SỬ</h2></div><button class="btn ghost" id="reset" style="margin:0;padding:8px 14px;font-size:12px">RESET</button></div>
+    <ul class="log card" id="log"></ul>
+  </section>
+
+  <footer>
+    <p>YAMA AI TOKEN PLATFORM © 2026</p>
+    <p>Prototype · Chỉ credit demo · Không có thanh toán thật</p>
+  </footer>
+</main>
+
+<div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const K='yama_vip_v1';
+let S={bal:1000,used:0,calls:0,log:[]};
+try{const d=JSON.parse(localStorage.getItem(K));if(d&&typeof d.bal==='number')S=d}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const fmt=n=>Number(n).toLocaleString('en-US');
+let shown=0;
+function countTo(t){const s=shown,st=performance.now();(function f(n){const p=Math.min((n-st)/500,1);shown=Math.round(s+(t-s)*p);$('bal').textContent=fmt(shown);if(p<1)requestAnimationFrame(f)})(st)}
+function render(){
+  countTo(S.bal);$('sUsed').textContent=fmt(S.used);$('sCalls').textContent=fmt(S.calls);
+  $('log').innerHTML=S.log.length?S.log.map(l=>`<li><span>${l.t}</span><span class="${l.v>0?'plus':'minus'}">${l.v>0?'+':''}${fmt(l.v)}</span></li>`).join(''):'<li><span class="muted">Chưa có giao dịch</span></li>';
+  save();
+}
+function toast(m){const n=$('notice');n.textContent=m;n.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>n.classList.remove('show'),2300)}
+function add(t,v){S.log.unshift({t,v});S.log=S.log.slice(0,8)}
+const replies={'AI Chat':'Xin chào! Mình là YAMA Chat (bản demo).','AI Image':'Đang tạo ảnh Cyberpunk... (mô phỏng)','AI Coding':'function hello(){return "YAMA"} (mô phỏng)','AI Video':'Đang dựng video 5 giây... (mô phỏng)'};
+document.querySelectorAll('.use').forEach(b=>b.onclick=()=>{
+  const c=+b.dataset.cost,n=b.dataset.name;
+  if(S.bal<c){toast('Không đủ credit. Hãy nạp thêm!');location.hash='shop';return}
+  S.bal-=c;S.used+=c;S.calls++;add('Dùng '+n,-c);render();
+  $('out').textContent='> '+replies[n];toast('Đã dùng '+c+' credits (demo)');
+});
+document.querySelectorAll('.buy').forEach(b=>b.onclick=()=>{
+  const a=+b.dataset.amt;S.bal+=a;add('Nạp gói '+b.dataset.name,a);render();toast('+'+fmt(a)+' credits (demo)');
+});
+$('reset').onclick=()=>{S={bal:1000,used:0,calls:0,log:[]};shown=0;$('out').textContent='';render();toast('Đã đặt lại về 1,000 credits')};
+$('menuBtn').onclick=()=>$('nav').classList.toggle('open');
+document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>$('nav').classList.remove('open'));
+render();
+
+/* particles */
+const cv=$('fx'),cx=cv.getContext('2d');let W,H,P=[];
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=Array.from({length:Math.min(55,Math.floor(W/14))},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}
+function tick(){cx.clearRect(0,0,W,H);
+  for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;cx.fillStyle='rgba(0,229,255,.7)';cx.fillRect(p.x,p.y,2,2)}
+  for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y);if(d<110){cx.strokeStyle='rgba(139,92,246,'+(1-d/110)*.35+')';cx.beginPath();cx.moveTo(P[i].x,P[i].y);cx.lineTo(P[j].x,P[j].y);cx.stroke()}}
+  requestAnimationFrame(tick)}
+addEventListener('resize',size);size();tick();
+</script>
+</body>
+</html>
